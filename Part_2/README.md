@@ -30,3 +30,9 @@ This model can be implemented by using the [bigram_model.py python file](https:/
 This process can be seen in the below screenshot:
 
 ![Screenshot of Command Line](https://github.com/laramurphyyx/CA4023_Assignment1/blob/main/Part_2/Output%20Screenshots/Question1_Screenshot.png)
+
+This python script also allows users to provide a command line argument (the name of a file) which contains a custom corpus. The custom corpus takes each line as a sentence and uses these to train the bigram language model.
+
+This process can be seen in the below screenshot:
+
+![Screenshot of Command Line when customised](https://github.com/laramurphyyx/CA4023_Assignment1/blob/main/Part_2/Output%20Screenshots/Custom_Corpus_Screenshot.png)
