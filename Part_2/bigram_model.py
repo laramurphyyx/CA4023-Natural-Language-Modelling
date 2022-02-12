@@ -85,8 +85,10 @@ def calculate_probability(question, training_corpus=None):
         
     return probability * 100
 
+# Taking the sentence question as input
 question = input("Enter a sentence: ") 
 
+# Accepting a filename as command line argument and transforming into a corpus
 if len(sys.argv) > 1:
     filename = sys.argv[1]
     file = open(filename, "r")
