@@ -29,4 +29,4 @@ This model can be implemented by using the [bigram_model.py python file](https:/
 
 This process can be seen in the below screenshot:
 
-![Screenshot of Command Line](./Output\ Screenshots/Question1_Screenshot.png)
+![Screenshot of Command Line](https://github.com/laramurphyyx/CA4023_Assignment1/blob/main/Part_2/Output%20Screenshots/Question1_Screenshot.png)
