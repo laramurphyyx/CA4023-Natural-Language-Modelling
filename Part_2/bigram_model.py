@@ -77,7 +77,7 @@ def calculate_probability(question, training_corpus=None):
         # Resetting the previous unigram
         previous = unigram
         
-    return probability
+    return probability * 100
 
 question = input("Enter a sentence: ") 
 
@@ -86,6 +86,6 @@ if len(sys.argv) > 1:
     file = open(filename, "r")
     contents = file.read()
     corpus = contents.split("\n")
-    print(calculate_probability(question, corpus))
+    print("The probability of '" + question + "' is " + str(calculate_probability(question, corpus)) + "%")
 else:
-    print(calculate_probability(question))
+    print("The probability of '" + question + "' is " + str(calculate_probability(question)) + "%")
