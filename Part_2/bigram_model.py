@@ -68,6 +68,12 @@ def calculate_probability(question, training_corpus=None):
     
     for unigram in question_list:
         
+        # Accomodating for unigrams/bigrams that do not exist in the unigram/bigram dictionary
+        if unigram not in unigrams:
+            unigrams[unigram] = 0
+        if (previous, unigram) not in bigrams:
+            bigrams[(previous, unigram)] = 0
+
         # Matching each unigram to the one before it, unless it's the first unigram
         if previous:
             probability *= ( bigrams[(previous, unigram)] / unigrams[previous] )
