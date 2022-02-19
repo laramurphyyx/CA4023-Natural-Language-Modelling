@@ -46,12 +46,11 @@ def create_frequency_dictionary(list_of_reviews):
 
     return review_dictionary
 
-def result_for_class(review, training_data):
+def result_for_class(review, frequency_dictionary):
     
     # Assigning a list for punctuation, the default probability of each class and a dictionary of words in the training data of a certain class
     punctuation = ['.', ',', ':', '"', '&', '?', '-', '(', ')', "'", '/']
     class_result = math.log(0.5)
-    dictionary = create_frequency_dictionary(training_data)
     
     for word in review.split():
         
@@ -60,12 +59,12 @@ def result_for_class(review, training_data):
             continue
             
         # If the word is not in the dictionary, treat dictionary[word] as 0
-        elif word not in dictionary:
-            class_result += math.log(1 / (sum(dictionary.values()) + 1))
+        elif word not in frequency_dictionary:
+            class_result += math.log(1 / (sum(frequency_dictionary.values()) + 1))
         
         # Adding the log probability of the word to the total probability of the class
         else:
-            class_result += math.log((dictionary[word] + 1) / (sum(dictionary.values()) + 1))
+            class_result += math.log((frequency_dictionary[word] + 1) / (sum(frequency_dictionary.values()) + 1))
 
     return class_result
         
@@ -99,6 +98,10 @@ positive_training_data = positive_reviews_list[:positive_90_split]
 negative_test_data = negative_reviews_list[negative_90_split:]
 positive_test_data = positive_reviews_list[positive_90_split:]
 
+# Assigning the frequency dictionaries for the training data
+negative_frequency_dictionary = create_frequency_dictionary(negative_training_data)
+positive_frequency_dictionary = create_frequency_dictionary(positive_training_data)
+
 ## - - - - -
 ## Testing the Model and Identifying Accuracy
 ## - - - - -
@@ -115,8 +118,8 @@ for review_id in range(0, len(positive_test_data)):
     
     # Assign the review as a variable and calculate the scores for positive and negative
     review = positive_test_data[review_id]
-    positive_result = result_for_class(review, positive_training_data)
-    negative_result = result_for_class(review, negative_training_data)
+    positive_result = result_for_class(review, positive_frequency_dictionary)
+    negative_result = result_for_class(review, negative_frequency_dictionary)
     
     # If positive has a higher score than negative, then increase the accuracy and add the result to the output list
     if positive_result > negative_result:
@@ -131,8 +134,8 @@ for review_id in range(0, len(negative_test_data)):
     
     # Assign the review as a variable and calculate the scores for positive and negative
     review = negative_test_data[review_id]
-    positive_result = result_for_class(review, positive_training_data)
-    negative_result = result_for_class(review, negative_training_data)
+    positive_result = result_for_class(review, positive_frequency_dictionary)
+    negative_result = result_for_class(review, negative_frequency_dictionary)
     
     # If negative has a higher score than positive, then increase the accuracy and add the result to the output list
     if positive_result < negative_result:
@@ -169,8 +172,8 @@ extra_review = input("You can test this model by typing your own review (Leave e
 while extra_review:
     
     # Calculating the positive and negative scores
-    positive_result = result_for_class(extra_review, positive_training_data)
-    negative_result = result_for_class(extra_review, negative_training_data)
+    positive_result = result_for_class(extra_review, positive_frequency_dictionary)
+    negative_result = result_for_class(extra_review, negative_frequency_dictionary)
     
     # Identifying if the sentence is more likely positive or negative
     if positive_result > negative_result:
