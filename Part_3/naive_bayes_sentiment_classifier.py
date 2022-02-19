@@ -100,24 +100,83 @@ negative_test_data = negative_reviews_list[negative_90_split:]
 positive_test_data = positive_reviews_list[positive_90_split:]
 
 ## - - - - -
-## Testing the Model and identifying Accuracy
+## Testing the Model and Identifying Accuracy
 ## - - - - -
 
+# Creating an initial list to store model results
+output_result_list = []
+
+# Creating an initial accuracy score of 0
 positive_accuracy = 0
-
-for review in positive_test_data:
-    positive_result = result_for_class(review, positive_training_data)
-    negative_result = result_for_class(review, negative_training_data)
-    if positive_result > negative_result:
-        positive_accuracy += 1
-
 negative_accuracy = 0
 
-for review in negative_test_data:
+# For each review in the positive dataset...
+for review_id in range(0, len(positive_test_data)):
+    
+    # Assign the review as a variable and calculate the scores for positive and negative
+    review = positive_test_data[review_id]
     positive_result = result_for_class(review, positive_training_data)
     negative_result = result_for_class(review, negative_training_data)
+    
+    # If positive has a higher score than negative, then increase the accuracy and add the result to the output list
+    if positive_result > negative_result:
+        positive_accuracy += 1
+        output_result_list.append("The positive test document " + str(review_id) + " has been classified as positive")
+    # If positive is less likely than negative, then leave the accuracy and add the result to the output list
+    else:
+        output_result_list.append("The positive test document " + str(review_id) + " has been classified as negative")
+
+# For each review in the negative dataset...
+for review_id in range(0, len(negative_test_data)):
+    
+    # Assign the review as a variable and calculate the scores for positive and negative
+    review = negative_test_data[review_id]
+    positive_result = result_for_class(review, positive_training_data)
+    negative_result = result_for_class(review, negative_training_data)
+    
+    # If negative has a higher score than positive, then increase the accuracy and add the result to the output list
     if positive_result < negative_result:
         negative_accuracy += 1
+        output_result_list.append("The negative test document " + str(review_id) + " has been classified as negative")
+    
+    # If negative is less likely than positive, then leave the accuracy and add the result to the output list
+    else:
+        output_result_list.append("The negative test document " + str(review_id) + " has been classified as positive")
+
+# Calculating Overall Accuracy and Changing Accuracy Figures to Percentages
+overall_accuracy = ((positive_accuracy + negative_accuracy) / (len(positive_test_data) + len(negative_test_data))) * 100
+positive_accuracy = (positive_accuracy / len(positive_test_data)) * 100
+negative_accuracy = (negative_accuracy / len(negative_test_data)) * 100
         
-print("The model's accuracy in identifying positive reviews is " + str(positive_accuracy/len(positive_test_data)*100) + "%")
-print("The model's accuracy in identifying negative reviews is " + str(negative_accuracy/len(negative_test_data)*100) + "%")
+## - - - - -
+## Script Output
+## - - - - -
+
+# Printing the accuracy of the model
+print("The model's accuracy in identifying positive reviews is " + str(positive_accuracy) + "%")
+print("The model's accuracy in identifying negative reviews is " + str(negative_accuracy) + "%")
+print("The model's overall accuracy is " + str(overall_accuracy) + "%")
+
+# Creating output file if the user accepts
+output_preference = input("Would you like an output file containing the classification for each review? (y/n):")
+if output_preference.lower() == 'y':
+    text_file = open("naive_bayes_classifier_output.txt", "w")
+    text_file.write("\n".join(output_result_list))
+    text_file.close()
+
+# Giving the user the option to test the model on their own sentences/reviews
+extra_review = input("You can test this model by typing your own review (Leave empty to skip): ")
+while extra_review:
+    
+    # Calculating the positive and negative scores
+    positive_result = result_for_class(extra_review, positive_training_data)
+    negative_result = result_for_class(extra_review, negative_training_data)
+    
+    # Identifying if the sentence is more likely positive or negative
+    if positive_result > negative_result:
+        print("This model has identified your review as positive")
+    else:
+        print("This model has identified your review as negative")
+        
+    # Giving the option to test another sentence
+    extra_review = input("You can test this model again by typing your own review (Leave empty to skip): ")
