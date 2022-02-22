@@ -20,9 +20,7 @@ python naive_bayes_sentiment_classifier.py
 
 The python script will give the user the option to provide a path to a directory containing the positive reviews and another path for the negative reviews, if no path is provided the model will be trained using the default cornell dataset as outlined above.
 
-Once the model is trained, it well test the model on the test dataset and will print the overall accuracy, the accuracy in identifying positive models and the accuracy in identifying negative models. This can be seen in the screenshot below:
-
-![Screenshot of Command Line](https://github.com/laramurphyyx/CA4023_Assignment1/blob/main/Part_3/Output%20Screenshots/Accuracy_Screenshot.png)
+Once the model is trained, it well test the model on the test dataset and will print the overall accuracy, the accuracy in identifying positive models and the accuracy in identifying negative models. 
 
 At this point, users have the option to download the results as a .txt file, by typing 'y' or 'n' into the input bar. If this is left empty, no output file will be produced.
 
