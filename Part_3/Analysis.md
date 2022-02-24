@@ -2,7 +2,7 @@
 
 ## Part 1: Analysis of 5 Incorrect Review Classification Examples:
 
-In total there were 33 reviews misclassified out of 100 test reviews. 22 of these reviews were positive reviews classified as negative, and 11 of these reviews were negative reviews classified as positive.
+In total there were 33 reviews misclassified out of 200 test reviews. 22 of these reviews were positive reviews classified as negative, and 11 of these reviews were negative reviews classified as positive.
 
 The reviews that I have chosen to analyse have been chosen at random, this process can be seen in the [Analysis of Misclassified Reviews Notebook](https://github.com/laramurphyyx/CA4023_Assignment1/blob/main/Part_3/Analysis%20of%20Misclassified%20Reviews.ipynb). I will be analysing misclassified positive reviews #2, #10 and #12 and negative reviews #5 and #6.
 
@@ -260,7 +260,7 @@ lance henriksen is his usual scene-chewing self , and is one of few possible rea
 the only other bright spot is the sweeping african scenery .
 i paid $3 for this film , from the discount rack at best buy , and halfway suspect i overpaid for it .
 if you are in the mood for samurai , read a clavell novel or watch a kurusawa movie .
-skip _the last samurai_ unless you are a die-hard henriksen fan . .
+skip _the last samurai_ unless you are a die-hard henriksen fan .
 ```
 
 After analysing the most negatively/positively associated words in the review, it appears that out of the 223 unique words in the review, it appears there are:
@@ -282,3 +282,162 @@ Similar to the negative review #1, this also contains a lot of negative words. H
 * fan
 
 These tokens may have impacted the performance of the model and caused the model to classify this as a positive review.
+
+## Part 2: Analysis of 5 Correct Review Classification Examples:
+
+In total there were 167 reviews misclassified out of 200 test reviews. 78 of these reviews were correctly classified as positive, and 99 of these reviews were correctly classified as negative.
+
+The reviews that I have chosen to analyse have been chosen at random, this process can be seen in the [Analysis of Misclassified Reviews Notebook](https://github.com/laramurphyyx/CA4023_Assignment1/blob/main/Part_3/Analysis%20of%20Misclassified%20Reviews.ipynb). I will be analysing  positive reviews #10, #44 and #74 and negative reviews #36 and #61.
+
+As these reviews are classified correctly, it's safe to assume that checking word frequency and ratio of negative/positive words will show the same results, so these will just be personal analyses.
+
+### Part 1.1: Analysing Correclty Classified Positive Review #10
+
+```
+susan granger's review of " legally blonde " ( m . g . m . ) it's a " pretty in pink " / " clueless " coming-of-age story for the new millennium as elle woods ( reese witherspoon ) , a perky southern california sorority queen , switches from fashion to law in order to win back her yuppy boyfriend ( matthew davis ) .
+the girl-power story begins as this sweetheart of delta nu is unceremoniously dumped by a bonehead who says : " if i'm going to be a senator by the time i'm 30 . . . i need to marry a jackie , not a marilyn .
+" determined to prove she's as smart a snobby brunette ( selma blair ) from country-club connecticut , elle not only applies to harvard law school but gets in , much to the amazement of family , friends and faculty .
+once there , this flaxen-haired fish-out-of-water not only survives but tenaciously thrives , befriending a local manicurist ( jennifer coolidge ) , dazzling a professor ( victor garber ) and rescuing a defendant ( ali larter ) in a celebrated boston murder trial , plus finding a more worthy beau ( luke wilson ) .
+in the tradition of teen-comedy film-maker john hughes and his disciple amy heckerling , there's wit , cheerfulness , a fidelity of observation and a penchant for problem-solving .
+first-time feature director robert luketic is blessed with reese witherspoon who's joyously incandescent in this utterly formulaic light comedy written by karen mccullah lutz and kirsten smith , based on a soon-to-be-published novel by amanda brown .
+the supporting cast is terrific , particularly raquel welch and holland taylor - and i particularly got a kick out of the gag of elle distributing scented resumes in pink , her signature color on the granger movie gauge of 1 to 10 , " legally blonde " is a frivolous , funny , feel-good 8 .
+filled with ditzy blonde ambition , it's a movie for high-school kids that their parents would be happy to have them see .
+```
+
+It's clear why this review was correctly classified, it makes use of lots of positively associated words. Positive words in the review include:
+
+* there's wit
+* cheerfulness
+* joyously incandescent
+* light comedy
+* terrific
+* frivolous
+* funny
+* feel-good
+* happy
+
+ It also has very little words that could be interpreted negatively either, causing little confusion for the model.
+
+### Part 1.2: Analysing Correclty Classified Positive Review #44
+
+```
+capsule : the best place to start if you're a jackie chan newcomer .
+roars along , never stops for breath , and frequently hilarious .
+to talk about jackie chan as a " stuntman " is to miss a million things .
+jackie is not only one of the most accomplished and fearsomely unafraid physical adepts on the screen today , but also a very funny guy .
+he reminds me of the way arnold schwartzenegger * used * to make me laugh -- he's funny just standing there , copping a look .
+supercop has jackie making us laugh , scream , duck , root , and gasp for breath , often all in the same scene .
+it's actually the third in a loosely related series of movies , each with jackie playing kevin chan , a hong kong policeman who has a knack for getting neck-deep into trouble and then karate-kicking his way out of it .
+ ( the others are also worth seeing .
+) it's a little slow to start , but once it gets moving , it's a field day .
+the movie has a fairly sophisticated plot for movies of this kind .
+kevin is tapped for a dangerous dea assignment to be accomplished in mainland china , which requires him to collaborate with the attractive ( and ass-kicking ) chief fo chinese security ( played here by the ever-enjoyable michelle yeoh ) .
+there's a fun chemistry between the two of them , especially in an early scene where she tries to brief him and he keeps making wondering comments about how great she looks in that uniform .
+kevin is assigned to help spring a known gangster from jail -- all undercover , of course -- and have him lead the two of them to a noted drug boss .
+the drug boss , however , has problems of his own : his wife's on trial for many of his own crimes , and she's got the key to an account with all of his drug funds .
+this means , of course , endless trouble -- not the least of which is that kevin bumps into his girlfriend while he's out in the field , and she sees him with this other woman , and . . .
+but that's one of the movie's unique pleasures : the way it crosses from action to comedy effortlessly . 
+action .
+there is , of course , non-stop action in this movie -- everything from one-on-one kung fu to all-out gun battles to a sppedboat with eight engines ( ! ) outrunning the hong kong coast guard .
+there is also a virtuoso climax , which features , among other things , jackie danging from a ladder tied to a helicopter , a wrong-way freeway chase ( which requires michelle to do an awesomely difficult handstand stunt ) , a fight on top of a moving train that also involves the 'copter as well as a motorcycle .
+you get the idea .
+this is to action movies what a burger with everything on it is to fast food : quick , enjoyable , filling .
+watch it with friends .
+when they stop making movies like this , the world will be a tad greyer .
+```
+
+Much like the positive review #10, this is full of positive words, such as:
+
+* best
+* hilarious
+* funny
+* laugh
+* fun
+* unique pleasures
+* awesomely
+* enjoyable
+
+While there are a few negative phrases that could confuse the model, the presence of these positive phrases is likely what swayed the classification.
+
+### Part 1.3: Analysing Correclty Classified Positive Review #74
+
+```
+richard gere can be a commanding actor , but he's not always in great films .
+everything comes together here .
+gere is a big time chicago defense attorney who takes on a seemingly unwinable case in hopes of even more publicity .
+it doesn't go exactly as he expects .
+gere's client , aaron ( edward norton ) , is a shy stuttering tennessee boy who is accused of brutally murdering and mutilating a catholic archbishop .
+the evidence is stacked against him .
+he was caught running from the scene covered in the bishop's blood .
+his bloody footprints are all over the murder scene .
+he has a relationship with the priest .
+gere talks to the boy , believes that he is actually innocent and sets about finding the real killer .
+despite the lawyer's proclamations that he doesn't care about the guilt of his clients and that the real thrill is gambling with people's lives , he becomes involved with aaron and is determined to free him .
+lots of complications and twists .
+the prosecuting attorney is gere's former co-worker and lover .
+they both work each other's motives to their legal advantages and it gets messy .
+her boss had major economic dealings with the archbishop that went sour and seems to have crime connections .
+aaron gets weirder and weirder as the trial goes on .
+gere's case is falling apart and he is faced with about a dozen ethical dilemmas .
+gere is exceptional as the well-dressed reserved counselor , but just once , i wanted to see him kick back and come out of his " suit " persona .
+even when he loses it , you don't see very far inside .
+norton's aaron is convincing : he comes across as the backwoods kid misplaced in the big city .
+the supporting cast does a fine job of holding together the story .
+as with most of the effective courtroom dramas , the cinematography is crisp and rich .
+the story will keep you on the edge of your seat .
+nothing is what it seems .
+```
+
+After reading this review, I would expect that the model would struggle to correctly classify it. While there are a few positive words in the review, there aren't many, and possibly equal amounts of negative phrases. The last few lines of the review contain most of the positive words and is possibly the reason this review was correctly classified as positive.
+
+### Part 1.4: Analysing Correclty Classified Negative Review #36
+
+```
+yet another brainless teen flick , this one is about , surprise , drugs and sex .
+stars katie holmes and sarah polly couldn't look more bored .
+their characters are cardboard cut-outs of every cliched teenager out there .
+one thing you need to know is i really hated this movie .
+everything about it annoyed the hell out of me .
+the acting , and script , the plot , and ending .
+the director ( of the fluke hit swingers ) could have very well directed a bunch of no-name actors and had a watchabe film .
+the " big " stars of go pretty much drown the project of any originality .
+i felt like i was watching dawson's creek episode 200 .
+although the film still would have stayed at red despite its cast .
+the " surprise " ending was sooo predictable .
+since when is a male character's sudden outing of the closet considered a surprise in hollywood anymore ? ? go is dawson's creek + varsity blues - she's all that = go home and watch something else .
+```
+
+It's clear that this is a negative review. There are many negative words such as:
+
+* brainless
+* bored
+* cliched
+* drown
+* predictable
+
+There are ver few positively associated words in this review, and it makes sense that the model correctly classified this as negative.
+
+### Part 1.5: Analysing Correclty Classified Negative Review #61
+
+```
+capsule : john the baptist is sent from heaven to see is the world is worth saving .
+he must find some sign of hope in the people of newfoundland .
+this is little more than a tv skit in movie form .
+it is watchable and apparently will be released to theaters in canada , but it is unlikely to be seen on the international market .
+it is diverting but hardly a serious piece of cinema .
+ , 0 ( -4 to +4 ) minor spoilers in this review .
+- written and directed by john w . doyle .
+- john the baptist sent to st . john , newfoundland .
+gets an invitation to live with a family .
+that extraordinary hospitality for some reason does not count as a reason for hope .
+- script has a lot of holes .
+- friend who adopts john is surprisingly militant and is planning actions to destabilize wall street .
+- john does look middle eastern , but somehow one expects john the baptist to be more dramatic .
+- there is a conspiracy in the vatican riding on the result of the visit , though that result seems small compared to the end of the world .
+- big yucks like seeing a nun give the pope a pedicure and evil pope's aid praying to a mendes goat .
+- in large part a satire of life in newfoundland taking licks at things like the poor produce .
+the one good tomato in grocery ( by virtue of a miracle ) " must have fallen off the truck to toronto .
+" - based on a 20-minute short film .
+```
+
+This review is not as clear-cut as the negative review #36. There are very few words that suggest it's a negative review, however there are even less to suggest it's a positive review. Majority of this review explains the plot of the film, and the words/phrases used to describe this will have more of an effect on the model's performance. The last two points made by the writer are the main suggestion that it is a negative review, that it is 'poor produce' and a metaphor to describe the quality of the film. These sentences possibly influenced the model to classify this review as negative.
