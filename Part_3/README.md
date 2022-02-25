@@ -29,3 +29,19 @@ The user also has the ability to test the model with their own sentences, and th
 The screenshot below shows the full process of using this model. Different aspects are highlighted different colours to make it easier to differentiate the different processes. Text that is highlighted yellow is the model requesting the user to provide some information, and text that is highlighted blue is the information provided by the user. The white text is the model output.
 
 ![Screenshot of Command Line](https://github.com/laramurphyyx/CA4023_Assignment1/blob/main/Part_3/Output%20Screenshots/Customized_Reviews_Screenshot.png)
+
+## Repository Structure
+
+The files contained in this directory are as follows:
+
+* <b>Output Screenshots/</b> : This is a directory containing screenshots of the model running (from the python script). There are five screenshots to show the output from running the above test sentences, and there is a screenshot to show the output from running a customised training corpus.
+
+* <b>Analysis of Misclassified Reviews.ipynb</b> : A python notebook containing the workings behind the analysis markdown file.
+
+* <b>Analysis.md</b> : A markdown file containing the analysis of 5 correctly and 5 incorrectly classified reviews.
+
+* <b>Naive Bayes Sentiment Classifier Notebook.ipynb</b> : A python notebook containing the workings behind the final python script.
+
+* <b>README.md</b> : This markdown file, which gives an introduction to the task description and outlines the implementation process.
+
+* <b>naive_bayes_sentiment_classifier.py</b> : A python script containing the naive bayes sentiment classifier model.

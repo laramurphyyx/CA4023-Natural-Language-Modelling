@@ -34,3 +34,15 @@ The code will then return an output file with the same name as the input file wi
 The below screenshot shows the contents of the output file for the above example:
 
 ![Screenshot of Output File](https://github.com/laramurphyyx/CA4023_Assignment1/blob/main/Part_1/Output%20Screenshots/Output_file.png)
+
+## Repository Structure
+
+The files contained in this directory are as follows:
+
+* <b>Output Screenshots/</b> : This is a directory containing two screenshots of the model running (from the python script). One screenshot for the command line output, and another for the output file.
+
+* <b>README.md</b> : This markdown file, which gives an introduction to the task description and outlines the implementation process.
+
+* <b>Sentence Boundary Detection Notebook.ipynb</b> : A python notebook containing the workings behind the final python script.
+
+* <b>sentence_boundary_detection.py</b> : A python script containing the sentence boundary detection model.

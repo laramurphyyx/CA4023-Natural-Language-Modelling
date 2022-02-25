@@ -36,3 +36,15 @@ This python script also allows users to provide a command line argument (the nam
 This process can be seen in the below screenshot:
 
 ![Screenshot of Command Line when customised](https://github.com/laramurphyyx/CA4023_Assignment1/blob/main/Part_2/Output%20Screenshots/Custom_Corpus_Screenshot.png)
+
+## Repository Structure
+
+The files contained in this directory are as follows:
+
+* <b>Output Screenshots/</b> : This is a directory containing screenshots of the model running (from the python script). There are five screenshots to show the output from running the above test sentences, and there is a screenshot to show the output from running a customised training corpus.
+
+* <b>README.md</b> : This markdown file, which gives an introduction to the task description and outlines the implementation process.
+
+* <b>Bigram Model Notebook.ipynb</b> : A python notebook containing the workings behind the final python script.
+
+* <b>bigram_model.py</b> : A python script containing the bigram model.
